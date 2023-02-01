@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('formations', function (Blueprint $table) {
             $table->id();
+            $table->string('nom');
+            $table->integer('duree');
+            $table->text('description');
+            $table->boolean('commence');
+            $table->date('dateDebut');
+            $table->date('dateFin');
             $table->timestamps();
         });
     }
