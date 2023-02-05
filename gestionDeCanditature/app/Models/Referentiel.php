@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Referentiel extends Model
 {
     use HasFactory;
+    public function formations()
+    {
+        return $this->hasMany(Formation::class);
+    }
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
 }
