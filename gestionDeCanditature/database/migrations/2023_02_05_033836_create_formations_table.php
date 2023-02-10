@@ -21,7 +21,7 @@ return new class extends Migration
             $table->boolean('commence');
             $table->date('dateDebut');
             $table->date('dateFin');
-            $table->foreignId('referentiel_id')->constrained();
+            $table->foreignId('referentiel_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

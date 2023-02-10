@@ -13,7 +13,7 @@ class ReferentielController extends Controller
      */
     public function index()
     {
-        //
+        return view('referentiels/index');
     }
 
     /**

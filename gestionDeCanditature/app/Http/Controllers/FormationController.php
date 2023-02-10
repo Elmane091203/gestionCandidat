@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Candidat;
+use App\Models\Formation;
+use App\Models\Referentiel;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Route;
 
 class FormationController extends Controller
 {
+    public int $contenue = 0;
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +18,7 @@ class FormationController extends Controller
      */
     public function index()
     {
-        //
+        return view('formations/index');
     }
 
     /**
@@ -80,5 +85,13 @@ class FormationController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function acceuil()
+    {
+        $candidats = Candidat::all();
+        $formations = Formation::all();
+        $referentiels = Referentiel::all();
+        return view("layouts.app", ['contenu' => $this->contenue,'candidats'=>$candidats,'formations'=>$formations,'referentiels'=>$referentiels]);
     }
 }

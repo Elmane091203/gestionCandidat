@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('libelle');
             $table->boolean('validite');
             $table->float('horaire');
-            $table->foreignId('type_id')->constrained(); 
+            $table->foreignId('type_id')->constrained()->onDelete('cascade'); 
             $table->timestamps();
         });
     }
